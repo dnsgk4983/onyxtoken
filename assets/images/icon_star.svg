@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="81px" height="77px" viewBox="0 0 81 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>first-screen_star</title>
+    <defs>
+        <linearGradient x1="98.8336582%" y1="6.12759053%" x2="1.67914142%" y2="93.7534949%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="first-screen_star">
+            <path d="M80.657959,-2.84217094e-14 L3.32418919,75.7240067 C2.9681388,76.0310897 2.5060149,76.2190094 2,76.2190094 C0.8954305,76.2190094 8.52651283e-14,75.3235789 8.52651283e-14,74.2190094 C8.52651283e-14,73.690844 0.20473195,73.2104964 0.539165109,72.8529972 L0.537443161,72.8509035 L0.571344813,72.8193855 C0.622144005,72.7675393 0.675742858,72.7184466 0.731896727,72.6723521 L80.657959,-2.84217094e-14 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+            <circle id="椭圆形" fill="#FFFFFF" cx="2" cy="74.2190094" r="1"></circle>
+        </g>
+    </g>
+</svg>

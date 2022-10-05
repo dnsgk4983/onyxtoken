@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1740px" height="880px" viewBox="0 0 1740 880" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>first-screen_bglight</title>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="47.8263802%" gradientTransform="translate(0.500000,0.500000),scale(0.402778,1.000000),rotate(90.000000),scale(1.000000,2.815525),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#D1E2FF" offset="0%"></stop>
+            <stop stop-color="#D1E2FF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <filter x="-10.4%" y="-25.9%" width="120.8%" height="151.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" gradientTransform="translate(0.500000,0.500000),scale(0.483376,1.000000),rotate(90.000000),scale(1.000000,2.564501),translate(-0.500000,-0.500000)" id="radialGradient-3">
+            <stop stop-color="#A2AAFF" offset="0%"></stop>
+            <stop stop-color="#A2AAFF" stop-opacity="0" offset="99.9445135%"></stop>
+        </radialGradient>
+        <filter x="-19.2%" y="-39.7%" width="138.4%" height="179.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="50%" gradientTransform="translate(0.500000,0.500000),scale(0.678636,1.000000),rotate(90.000000),scale(1.000000,2.564501),translate(-0.500000,-0.500000)" id="radialGradient-5">
+            <stop stop-color="#A2AAFF" offset="0%"></stop>
+            <stop stop-color="#A2AAFF" stop-opacity="0" offset="100%"></stop>
+        </radialGradient>
+        <filter x="-26.9%" y="-39.7%" width="153.9%" height="179.4%" filterUnits="objectBoundingBox" id="filter-6">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="背景光定位" transform="translate(-90.000000, -350.000000)">
+            <g id="first-screen_bglight" transform="translate(240.000000, 500.000000)">
+                <path d="M1113.7561,579.14648 C1330.30005,531.134045 1440,381.917281 1440,278.461051 C1440,124.671259 1117.64502,0 720,0 C322.35498,0 0,124.671259 0,278.461051 C0,378.730418 78.1983798,530.116033 283.783325,579.14648 C499.413818,579.14648 1007.49731,581.066901 1113.7561,579.14648 Z" id="椭圆形" fill="url(#radialGradient-1)" opacity="0.600000024" filter="url(#filter-2)"></path>
+                <ellipse id="椭圆形备份" fill="url(#radialGradient-3)" opacity="0.800000012" filter="url(#filter-4)" cx="516" cy="391" rx="391" ry="189"></ellipse>
+                <ellipse id="椭圆形备份-2" fill="url(#radialGradient-5)" opacity="0.600000024" filter="url(#filter-6)" cx="1075.5" cy="391" rx="278.5" ry="189"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

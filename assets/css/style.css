@@ -1,0 +1,466 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+a {
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.common-content {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@keyframes shooting-star-1 {
+  0% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  18.75% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+    transform: translate(-500px, 469px);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-500px, 469px);
+  }
+}
+@keyframes move-plane-1 {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+@keyframes move-plane-2 {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+.head.night {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 6rem;
+  background-color: #1b1a28;
+}
+.head.night .nav:before {
+  background-color: #1b1a28;
+  border-color: #1b1a28;
+}
+.head.night .nav-night-mask {
+  opacity: 0;
+}
+.head .nav {
+  width: 100%;
+  height: 6rem;
+  transition: transform 0.3s 0.7s;
+  transform: translateY(0);
+}
+.head .nav:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.3s;
+  transition-property: background-color, border-color;
+  border-bottom: 1px solid rgba(8, 10, 50, 0.08);
+}
+.head .nav-night-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+.head .nav-content {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1240px;
+  height: 100%;
+}
+.head .nav-content .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+.head .nav-content .nav-logo img {
+  width: 12rem;
+}
+.head .nav-content .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.head .nav-content .nav-list .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.4rem;
+  font-family: Helvetica, sans-serif;
+  height: 100%;
+  margin-left: 4rem;
+}
+.head .nav-content .nav-list .nav-item:first-child {
+  margin-left: 0;
+}
+.head .nav-content .nav-list .nav-item a {
+  color: rgba(255, 255, 255, 0.6);
+}
+.head .nav-content .nav-list .nav-item a:hover {
+  color: #5b8ff9;
+}
+.head .nav-content .nav-list .nav-item.active a {
+  color: #fff;
+}
+.head .nav-content .nav-list .nav-item.connect a, .head .nav-content .nav-list .nav-item.wallet a {
+  display: block;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  transition: all 0.3s;
+}
+.head .nav-content .nav-list .nav-item.connect a:hover, .head .nav-content .nav-list .nav-item.wallet a:hover {
+  color: #fff;
+  transform: translateY(-5px);
+}
+.head .nav-content .nav-list .nav-item.wallet {
+  margin-left: 2rem;
+}
+.head .nav-content .nav-list .nav-item.wallet a {
+  background: linear-gradient(45deg, #1d97c7, #5178f0 53%, #875ff3);
+}
+
+.bridge {
+  position: relative;
+  width: 100%;
+  height: calc(200vh + 144px);
+}
+.bridge .be-sub {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  bottom: calc(100vh - 560px);
+  z-index: 1;
+}
+.bridge .be-content {
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+}
+.bridge .be-content .be-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #1b1a28;
+}
+.bridge .be-content .be-bg-mountain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/main_bg.jpg") no-repeat bottom;
+  background-size: 2560px auto;
+}
+.bridge .be-content .be-bg-backlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -28rem;
+  background: url("../images/backlight.svg") no-repeat bottom;
+  background-size: 1440px auto;
+}
+.bridge .be-content .be-bg-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50rem;
+}
+.bridge .be-content .be-bg-sky .be-bg-sky-star {
+  position: absolute;
+  bottom: 100%;
+  width: 81px;
+  height: 76px;
+  background: url("../images/icon_star.svg") no-repeat;
+  background-size: 100%;
+}
+.bridge .be-content .be-bg-sky .be-bg-sky-star.star1 {
+  right: 0;
+  animation: shooting-star-1 8s ease-in 2s infinite;
+}
+.bridge .be-content .be-bg-sky .be-bg-sky-star.star2 {
+  right: 30%;
+  animation: shooting-star-1 8s ease-in 7s infinite;
+}
+.bridge .be-content .be-bg-sky .be-bg-sky-star.star3 {
+  right: 50%;
+  animation: shooting-star-1 8s ease-in 5s infinite;
+}
+.bridge .be-content .be-bg-sky .be-bg-sky-star.star4 {
+  right: 70%;
+  animation: shooting-star-1 8s ease-in 7s infinite;
+}
+.bridge .be-content .be-bg-plane-1 {
+  position: absolute;
+  bottom: 53.7rem;
+  left: 50%;
+  width: 14.5rem;
+  height: 0.8rem;
+  background: url("../images/plane1.png") no-repeat;
+  background-size: 100% auto;
+  animation: move-plane-1 15s linear infinite;
+}
+.bridge .be-content .be-bg-plane-2 {
+  position: absolute;
+  bottom: 47rem;
+  right: 50%;
+  width: 8.5rem;
+  height: 1.5rem;
+  background: url("../images/plane2.png") no-repeat;
+  background-size: 100% auto;
+  animation: move-plane-2 30s linear infinite;
+}
+.bridge .be-content .be-bg-lamp-box {
+  position: absolute;
+  width: 4.5rem;
+  height: 66rem;
+  bottom: 9.4rem;
+  left: 50%;
+  transform: translateX(-235px);
+}
+.bridge .be-content .be-bg-lamp-box .be-bg-lamp {
+  width: 100%;
+  height: 100%;
+  background: url("../images/lamp.svg") no-repeat;
+  background-position: 100%;
+  transform-origin: bottom center;
+}
+.bridge .be-content .be-bg-city {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 2560px auto;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.bridge .be-content .be-bg-city-night {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bridge .be-content .be-bg-city-night > div {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  right: 0;
+  bottom: 0;
+}
+.bridge .be-content .be-bg-city-night .build {
+  background: url("../images/city1.gif") no-repeat;
+  background-position: bottom;
+  background-size: 2560px auto;
+}
+.bridge .be-content .be-bg-city-night .window {
+  background: url("../images/city2.png") no-repeat;
+  background-position: bottom;
+  background-size: 2560px auto;
+}
+.bridge .be-content .be-bg-city-night .light {
+  background: url("../images/city3.png") no-repeat;
+  background-position: bottom;
+  background-size: 2560px auto;
+}
+.bridge .be-content .be-bg-city-night .flash {
+  background: url("../images/city4.png") no-repeat;
+  background-position: bottom;
+  background-size: 2560px auto;
+}
+
+/*# sourceMappingURL=style.css.map */

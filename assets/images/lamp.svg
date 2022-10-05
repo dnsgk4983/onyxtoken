@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="660px" viewBox="0 0 45 660" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>first-screen_spotlight</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="控件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="first-screen_spotlight" fill="url(#linearGradient-1)">
+            <polygon points="-2.85708956e-14 0 45 0 35 660 11 660"></polygon>
+        </g>
+    </g>
+</svg>

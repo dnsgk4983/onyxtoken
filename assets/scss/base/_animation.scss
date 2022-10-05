@@ -1,0 +1,60 @@
+@keyframes shooting-star-1 {
+    0% {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    18.75% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+        transform: translate(-500px, 469px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-500px, 469px);
+    }
+}
+
+@keyframes move-plane-1 {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes move-plane-2 {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+}
