@@ -1,60 +1,36 @@
-@keyframes shooting-star-1 {
+@keyframes rotate {
     0% {
-        opacity: 1;
-        transform: translate(0);
+        transform: rotate(0deg);
     }
 
-    18.75% {
-        opacity: 1;
-    }
-
-    25% {
-        opacity: 0;
-        transform: translate(-500px, 469px);
-    }
-
-    to {
-        opacity: 0;
-        transform: translate(-500px, 469px);
+    100% {
+        transform: rotate(360deg);
     }
 }
 
-@keyframes move-plane-1 {
+@keyframes fade {
     0% {
-        transform: translateX(-1000px);
-        opacity: 0;
-    }
-
-    5% {
         opacity: 1;
     }
 
-    95% {
-        opacity: 1;
-    }
-
-    to {
-        transform: translateX(1000px);
-        opacity: 0;
+    50% {
+        opacity: 0.25;
     }
 }
 
-@keyframes move-plane-2 {
+@keyframes fade-in {
     0% {
-        transform: translateX(1000px);
         opacity: 0;
     }
 
-    5% {
+    100% {
         opacity: 1;
     }
+}
 
-    95% {
-        opacity: 1;
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
     }
-
-    to {
-        transform: translateX(-1000px);
-        opacity: 0;
-    }
+    
 }
