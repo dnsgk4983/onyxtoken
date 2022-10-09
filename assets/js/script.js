@@ -1,8 +1,13 @@
-gsap.timeline({
+
+const mask2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".section-intro",
-    pin: true,
     start: "top top",
     end: "bottom bottom",
+    scrub: true,
   },
+});
+mask2.to(".intro-mask-2", {
+  opacity: 1,
+  duration: 1
 });
