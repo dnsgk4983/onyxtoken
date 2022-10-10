@@ -7,7 +7,7 @@ const mask2 = gsap.timeline({
     scrub: true,
   },
 });
-mask2.to(".intro-mask-2", {
+mask2.to(".section-intro .mask-2", {
   opacity: 1,
   duration: 1
 });
