@@ -111,7 +111,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.2;
 }
 
 ol,
@@ -157,4 +157,5 @@ a {
     font-weight: 500;
     transition: color .3s;
     text-decoration: none;
+    color: inherit;
 }
