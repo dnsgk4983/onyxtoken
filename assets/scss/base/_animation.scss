@@ -55,3 +55,83 @@
         transform: translate(-10px, -10px);
     }
 }
+
+@keyframes arrows {
+    0% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+        transform: translate(-12px, 0)rotate(-135deg);
+    }
+
+    10%,
+    90% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-left: 6px solid rgba(0, 0, 0, $peakopacity);
+        border-bottom: 6px solid rgba(0, 0, 0, $peakopacity);
+        transform: translate(0, 0px)rotate(-135deg);
+    }
+
+    100% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+        transform: translate(12px, 0)rotate(-135deg);
+    }
+}
+
+@keyframes arrows2 {
+    0% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+        transform: translate(12px, 0)rotate(45deg);
+    }
+
+    10%,
+    90% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-left: 6px solid rgba(0, 0, 0, $peakopacity);
+        border-bottom: 6px solid rgba(0, 0, 0, $peakopacity);
+        transform: translate(0, 0px)rotate(45deg);
+    }
+
+    100% {
+        border-left: 6px solid rgba(0, 0, 0, 0);
+        border-bottom: 6px solid rgba(0, 0, 0, 0);
+        transform: translate(-12px, 0)rotate(45deg);
+    }
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+@keyframes bgCity {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
