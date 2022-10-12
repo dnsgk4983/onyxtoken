@@ -227,6 +227,9 @@ a {
   }
 }
 @keyframes back {
+  0% {
+    background-position: 0 0;
+  }
   100% {
     background-position: 2000px 0;
   }
@@ -395,19 +398,34 @@ a {
   color: #fff;
 }
 .head .nav-content .nav-list .nav-item.connect a, .head .nav-content .nav-list .nav-item.wallet a {
+  z-index: 3;
+  position: relative;
   display: block;
   color: #fff;
   padding: 0.8rem 1.2rem;
   border: 2px solid #fff;
   border-radius: 2rem;
   transition: all 0.3s;
-  background: linear-gradient(45deg, #fff 50%, transparent 50%);
-  background-position: 100%;
-  background-size: 400%;
+  background: transparent;
+  overflow: hidden;
+}
+.head .nav-content .nav-list .nav-item.connect a:before, .head .nav-content .nav-list .nav-item.wallet a:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8341B1 0%, #092576 100%);
+  opacity: 0;
+  transition: all 0.3s;
 }
 .head .nav-content .nav-list .nav-item.connect a:hover, .head .nav-content .nav-list .nav-item.wallet a:hover {
-  color: #0C232D;
-  background-position: 0 0;
+  color: #fff;
+}
+.head .nav-content .nav-list .nav-item.connect a:hover:before, .head .nav-content .nav-list .nav-item.wallet a:hover:before {
+  opacity: 1;
 }
 .head .nav-content .nav-list .nav-item.wallet {
   margin-left: 2rem;
@@ -598,12 +616,11 @@ a {
 }
 .section-intro {
   width: 100%;
-  min-height: 200vh;
-  overflow: hidden;
+  height: calc(200vh + 14.4rem);
 }
 .section-intro .bg-intro-mask {
   z-index: -2;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 100%;
@@ -672,11 +689,16 @@ a {
   width: 100%;
   height: 100%;
   background: url("../images/bg_city_after.png") no-repeat bottom center;
-  animation: bgCity 3s linear infinite;
+  animation: bgCity 1.2s linear infinite;
 }
 .section-intro .intro-mask-1 {
-  padding-top: 12rem;
-  left: 2rem;
+  position: sticky;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  padding-top: 6rem;
+  height: calc(100vh - 6rem);
+  margin: 0 auto;
   box-sizing: border-box;
 }
 .section-intro .intro-mask-1 .title-wrap .title {
@@ -691,7 +713,7 @@ a {
   background: url("../images/back.png");
   -webkit-background-clip: text;
   background-position: 0 0;
-  animation: back 20s linear infinite;
+  animation: back 10s linear infinite;
 }
 .section-intro .intro-mask-1 .title-wrap .title .cross {
   position: relative;
@@ -784,11 +806,12 @@ a {
 }
 .section-intro .intro-mask-2 {
   z-index: 1;
-  position: sticky;
-  top: 100vh;
+  position: absolute;
+  top: 50rem;
   left: 0;
   right: 0;
   width: 100%;
+  bottom: calc(100vh - 56rem);
   opacity: 0;
 }
 .section-intro .intro-mask-2 .common-content {
@@ -797,7 +820,7 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 126px;
-  padding: 12rem 12rem 0 12rem;
+  padding: 10rem 12rem 0 12rem;
   box-sizing: border-box;
 }
 .section-intro .intro-mask-2 .intro-mask-content {
@@ -814,7 +837,6 @@ a {
   z-index: 5;
   position: relative;
   color: #192F39;
-  margin-top: 10rem;
 }
 .section-intro .intro-mask-3-effect {
   z-index: -1;
@@ -978,17 +1000,21 @@ a {
 .section.metatrader4_wrap .common-content .arrow-box .right_arrow {
   margin-top: 8rem;
 }
+.section.metatrader4_wrap .common-content .arrow-box .right_arrow .arrows {
+  margin-left: 1rem;
+}
 .section.metatrader4_wrap .common-content .arrow-box .right_arrow .arrows:before {
-  animation: arrows2 3s linear infinite;
+  animation: arrows2 1.5s linear infinite;
 }
 .section.metatrader4_wrap .common-content .arrow-box .right_arrow .arrows:after {
-  animation: arrows2 3s linear infinite -1.5s;
+  animation: arrows2 1.5s linear infinite -0.75s;
 }
 .section.metatrader4_wrap .common-content .arrow-box .arrows {
   position: relative;
-  width: 30px;
-  height: 30px;
-  margin-top: 8px;
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1.6rem;
+  margin-left: -1rem;
 }
 .section.metatrader4_wrap .common-content .arrow-box .arrows:before {
   content: "";
@@ -999,7 +1025,7 @@ a {
   border-left: 6px solid rgba(0, 0, 0, 0.7);
   border-bottom: 6px solid rgba(0, 0, 0, 0.7);
   transform: translate(0, 0) rotate(-135deg);
-  animation: arrows 3s linear infinite;
+  animation: arrows 1.5s linear infinite;
 }
 .section.metatrader4_wrap .common-content .arrow-box .arrows:after {
   content: "";
@@ -1009,7 +1035,7 @@ a {
   border-left: 6px solid rgba(0, 0, 0, 0.7);
   border-bottom: 6px solid rgba(0, 0, 0, 0.7);
   transform: translate(12px, 0) rotate(-135deg);
-  animation: arrows 3s linear infinite -1.5s;
+  animation: arrows 1.5s linear infinite -0.75s;
 }
 .section.team_wrap {
   position: relative;
@@ -1019,6 +1045,7 @@ a {
   background-size: cover;
   padding: 4rem 0 10rem;
   min-height: 50rem;
+  max-height: 50rem;
   box-sizing: border-box;
 }
 .section.team_wrap .team-gallery .section-title {
@@ -1059,21 +1086,19 @@ a {
 .section.team_wrap .team-gallery .swiper-slide-container .slide-item .slide-text p {
   font-size: 1.6rem;
 }
-.section.team_wrap .swiper-slide-container {
-  height: 100%;
-}
 .section.team_wrap .gallery-thumbs_wrap {
   position: absolute;
   right: 5rem;
-  top: 57%;
-  transform: translateY(-50%);
+  top: 0;
   width: 100%;
+  height: 100%;
   max-width: 31.5rem;
   box-sizing: border-box;
   z-index: 3;
 }
 .section.team_wrap .gallery-thumbs_wrap .gallery-thumbs {
   position: relative;
+  height: 100%;
 }
 .section.team_wrap .gallery-thumbs_wrap .swiper-slide-container {
   background: #fff;
@@ -1091,6 +1116,8 @@ a {
   background: #393C71;
 }
 .section.team_wrap .gallery-thumbs_wrap .swiper-slide {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   opacity: 0.4;
@@ -1103,6 +1130,7 @@ a {
 .section.team_wrap .gallery-thumbs_wrap .swiper-slide-container {
   width: 100%;
   padding: 2.5rem 0;
+  box-sizing: border-box;
 }
 .section.team_wrap .gallery-thumbs_wrap .swiper-slide-container img {
   width: 5rem;

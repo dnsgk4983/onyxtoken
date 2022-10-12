@@ -10,7 +10,15 @@ const mask2 = gsap.timeline({
   scrollTrigger: {
     trigger: ".section-intro",
     start: "top top",
-    end: "bottom bottom",
+    end: "50% 50%",
+    scrub: true,
+  },
+});
+const mask3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".section-intro",
+    start: "top top",
+    end: "25% 25%",
     scrub: true,
   },
 });
@@ -20,6 +28,10 @@ mask1.to(".section-intro .intro-mask-2", {
 });
 mask2.to(".section-intro .mask-2", {
   opacity: 1,
+  duration: 1
+});
+mask3.to(".section-intro .intro-mask-1", {
+  opacity: 0,
   duration: 1
 });
 
@@ -42,12 +54,12 @@ var galleryThumbs = new Swiper('.gallery-thumbs', {
   pagination: {
     el: ".swiper-pagination",
   },
-  centeredSlides: true,
-  slidesPerView: 'auto',
+  centeredSlides: false,
+  slidesPerView: 3,
   touchRatio: 0.2,
   slideToClickedSlide: true,
   loop: true,
-  loopedSlides: 3
+  loopedSlides: 1
 });
 galleryTop.controller.control = galleryThumbs;
 galleryThumbs.controller.control = galleryTop;
