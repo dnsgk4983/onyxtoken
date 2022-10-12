@@ -686,6 +686,7 @@
 
     &.metatrader4_wrap {
         background: #fff;
+        padding-bottom: 7rem;
 
         .common-content {
             padding: 0 6rem;
@@ -828,7 +829,16 @@
     }
 
     &.team_wrap {
+        position: relative;
         .team-gallery {
+            position: relative;
+
+            .section-title {
+                position: absolute;
+                top: 4rem;
+                width: 100%;
+                z-index: 3;
+            }
             .swiper-slide-container {
                 width: 100%;
                 position: relative;
@@ -840,11 +850,14 @@
                     top: 50%;
                     left: 10rem;
                     transform: translateY(-50%);
+                    display: flex;
+                    align-items: flex-start;
 
                     img {
                         width: 120px;
                         border: 2px solid #323F46;
                         border-radius: 100%;
+                        margin-right: 2rem;
                     }
 
                     .slide-text {
@@ -853,6 +866,7 @@
                         h4 {
                             font-size: 2rem;
                             font-weight: 600;
+                            margin-bottom: 1.6rem;
                         }
 
                         p {
@@ -864,31 +878,71 @@
         }
 
         .swiper-slide-container {
-            text-align: center;
-            font-size: 18px;
             background: #fff;
             height: 100%;
-            max-width: 600px;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .gallery-thumbs {
-            height: 20%;
+        .gallery-thumbs_wrap {
+            position: absolute;
+            right: 5rem;
+            top: 57%;
+            transform: translateY(-50%);
+            width: 100%;
+            max-width: 31.5rem;
             box-sizing: border-box;
-            padding: 10px 0;
-        }
+            z-index: 3;
 
-        .gallery-thumbs .swiper-slide {
-            width: 20%;
-            height: 100%;
-            opacity: 0.4;
-        }
+            .gallery-thumbs {
+                position: relative;
+            }
 
-        .gallery-thumbs .swiper-slide-active {
-            opacity: 1;
+            .swiper-container-vertical>.swiper-pagination-bullets {
+                right: inherit;
+                left: -2rem;
+            }
+
+            .swiper-pagination-bullet {
+                transition: all .3s;
+            }
+
+            .swiper-pagination-bullet-active {
+                height: 2.8rem;
+                border-radius: 50px;
+                background: #393C71;
+            }
+
+            .swiper-slide {
+                width: 100%;
+                height: 100%;
+                opacity: 0.4;
+            }
+
+            .swiper-slide-active {
+                border: 2px solid #192F39;
+                border-radius: 5px;
+                opacity: 1;
+            }
+            .swiper-slide-container {
+                width: 100%;
+                padding: 2.5rem 0;
+                img {
+                    width: 5rem;
+                    margin-left: 2rem;
+                    margin-right: 2rem;
+                }
+                .slide-text {
+                    flex: 1;
+
+                    h4 {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                    }
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
         }
     }
 
