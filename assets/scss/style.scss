@@ -831,25 +831,35 @@
     &.team_wrap {
         position: relative;
         .team-gallery {
-            position: relative;
+            // position: relative;
+            background: url(../images/slide_bg01.png) no-repeat;
+            background-size: cover;
+            padding: 4rem 0 10rem;
+            min-height: 50rem;
+            box-sizing: border-box;
 
             .section-title {
-                position: absolute;
-                top: 4rem;
-                width: 100%;
-                z-index: 3;
+                margin-bottom: 6rem;
             }
+
+            .swiper-wrapper {
+                margin-left: 3rem;
+            }
+
+            .swiper-slide {
+                opacity: 0 !important;
+                transition: all .3s;
+            }
+
+            .swiper-slide-active {
+                opacity: 1 !important;
+            }
+
             .swiper-slide-container {
-                width: 100%;
-                position: relative;
+                max-width: 630px;
+                width: 65%;
 
                 .slide-item {
-                    max-width: 630px;
-                    width: 100%;
-                    position: absolute;
-                    top: 50%;
-                    left: 10rem;
-                    transform: translateY(-50%);
                     display: flex;
                     align-items: flex-start;
 
@@ -878,7 +888,6 @@
         }
 
         .swiper-slide-container {
-            background: #fff;
             height: 100%;
         }
 
@@ -894,6 +903,10 @@
 
             .gallery-thumbs {
                 position: relative;
+            }
+
+            .swiper-slide-container {
+                background: #fff;
             }
 
             .swiper-container-vertical>.swiper-pagination-bullets {
