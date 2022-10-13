@@ -16,6 +16,10 @@
     display: flex;
 }
 
+.justify-content-center {
+    justify-content: center;
+}
+
 $size: 26px;
 $speed: 1.5s;
 $peakopacity: 0.7;

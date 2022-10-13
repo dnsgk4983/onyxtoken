@@ -109,31 +109,16 @@
                         display: block;
                         color: #fff;
                         padding: 0.8rem 1.2rem;
-                        border: 2px solid #fff;
+                        border: 1px solid #fff;
                         border-radius: 2rem;
                         transition: all .3s;
                         background: transparent;
                         overflow: hidden;
-
-                        &:before {
-                            content: "";
-                            z-index: -1;
-                            position: absolute;
-                            left: 0;
-                            top: 0;
-                            width: 100%;
-                            height: 100%;
-                            background: linear-gradient(45deg, #8341B1 0%, #092576 100%);
-                            opacity: 0;
-                            transition: all .3s;
-                        }
+                        background: linear-gradient(45deg, #8341B1 0%, #092576 100%);
 
                         &:hover {
                             color: #fff;
-
-                            &:before {
-                                opacity: 1;
-                            }
+                            background: linear-gradient(45deg, #092576 0%, #8341B1 100%);
                         }
                     }
                 }
@@ -362,7 +347,7 @@
     // 인트로 영역
     &-intro {
         width: 100%;
-        height: calc(200vh + 14.4rem);
+        height: 200vh;
 
         .bg-intro-mask {
             z-index: -2;
@@ -382,6 +367,11 @@
             }
 
             .mask-1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 105%;
+                height: 100%;
 
                 .vertical-centered-box {
                     z-index: -2;
@@ -521,7 +511,7 @@
                 align-items: center;
                 width: fit-content;
                 padding: 2.4rem 3.2rem;
-                border-radius: 2rem;
+                border-radius: 1rem;
                 border: 1px solid #ccc;
                 background: rgba(28, 40, 56, 0.7);
 
@@ -533,7 +523,16 @@
                     font-weight: 400;
 
                     i {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 2rem;
+                        height: 2rem;
                         margin-right: 0.4rem;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
                 }
 
@@ -559,7 +558,7 @@
                     padding: 1.2rem 4.8rem 1.2rem 2.4rem;
                     border: 1px solid #ccc;
                     border-radius: 0.5rem;
-                    background-color: #151f2c;
+                    background-color: rgba(21, 31, 44, 0.75);
 
                     &:after {
                         content: "";
@@ -580,18 +579,21 @@
         }
 
         .intro-mask-2 {
-            z-index: 1;
-            position: absolute;
-            top: 50rem;
-            left: 0;
-            right: 0;
-            width: 100%;
-            bottom: calc(100vh - 56rem);
-            opacity: 0;
+            position: sticky;
+            top: 6rem;
+
+            &-wrap {
+                z-index: 1;
+                position: absolute;
+                top: 50rem;
+                left: 0;
+                right: 0;
+                width: 100%;
+                bottom: calc(100vh - 56rem);
+                opacity: 0;
+            }
 
             .common-content {
-                position: sticky;
-                top: 6rem;
                 display: flex;
                 justify-content: space-between;
                 gap: 126px;
@@ -613,10 +615,11 @@
             }
         }
 
-        .intro-mask-3 {
+        .intro-mask-2-card {
             z-index: 5;
             position: relative;
             color: #192F39;
+            margin-top: 10rem;
 
             &-effect {
                 z-index: -1;
@@ -721,6 +724,7 @@
                 width: 60%;
                 padding-right: 3rem;
             }
+
             .text-box p {
                 margin-top: 1.6rem;
             }
@@ -864,6 +868,16 @@
         }
     }
 
+    &.partnership_wrap {
+        h3 {
+            margin-bottom: 5rem;
+        }
+
+        .swiper-wrapper {
+            align-items: center;
+        }
+    }
+
     &.wallet_wrap {
         background: #fff;
 
@@ -899,6 +913,10 @@
                     font-size: 1.6rem;
                     line-height: 1.4;
                 }
+            }
+
+            .wallet_img {
+                animation: dungdung 3s infinite linear;
             }
         }
     }
@@ -998,7 +1016,7 @@ footer {
             padding: 0;
         }
     }
-    
+
 
     .section {
         &-title {
@@ -1006,16 +1024,18 @@ footer {
         }
 
         &-intro {
+            height: auto;
+
             .intro-mask-1 {
-                left: 0;
-                padding: 12rem 3.2rem;
+                height: auto;
+                padding: 8rem 3.2rem;
                 box-sizing: border-box;
 
                 .title-wrap {
 
                     .title {
                         h3 {
-                            font-size: 6rem;
+                            font-size: 5.4rem;
                         }
 
                         .cross {
@@ -1032,13 +1052,22 @@ footer {
             }
 
             .intro-mask-2 {
+                position: relative;
+                top: auto;
+
+                &-wrap {
+                    position: relative;
+                    top: auto;
+                    bottom: auto;
+                }
+
                 .common-content {
                     gap: 0 5%;
-                    padding: 12rem 3.2rem;
+                    padding: 0 3.2rem;
                 }
             }
 
-            .intro-mask-3 {
+            .intro-mask-2-card {
                 &-effect {
                     max-width: 100%;
                 }
@@ -1167,12 +1196,13 @@ footer {
         &-title {
             font-size: 3.2rem;
         }
+
         &.multi-chain_wrap {
             br {
                 display: none;
             }
 
-            .chain-item_wrap > div h3 {
+            .chain-item_wrap>div h3 {
                 font-size: 2.4rem;
             }
         }
@@ -1190,6 +1220,7 @@ footer {
                 width: 100%;
                 max-width: 40rem;
                 margin-bottom: 3rem;
+
                 img {
                     width: 100%;
                 }
@@ -1203,7 +1234,8 @@ footer {
             .news_logo {
                 width: 4.5rem;
             }
-            & > div {
+
+            &>div {
                 h3 {
                     font-size: 2.8rem;
                 }
@@ -1214,6 +1246,7 @@ footer {
     footer {
         .common-content {
             flex-direction: column-reverse;
+
             p {
                 margin-top: 1.4rem;
             }
@@ -1231,12 +1264,95 @@ footer {
         &-title {
             font-size: 2.4rem;
         }
+
+        &-intro {
+            .intro-mask-1 {
+                padding: 6rem 3.2rem;
+
+                .title-wrap {
+                    .title {
+                        h3 {
+                            font-size: 3.6rem;
+                        }
+
+                        .cross {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+
+                .title-map {
+                    margin: 3.2rem 0;
+                    padding: 1.6rem 2rem;
+
+                    &-line {
+                        width: 1.8rem;
+                    }
+                }
+
+                .action {
+                    margin: 0;
+                }
+            }
+
+            .intro-mask-2 {
+                .common-content {
+                    flex-direction: column;
+                }
+
+                &-card {
+                    .common-content {
+                        flex-direction: column-reverse;
+
+                        img {
+                            min-width: 0;
+                        }
+                    }
+
+                    .mask-text-box {
+                        margin-top: 1.2rem;
+                    }
+                }
+
+                .intro-mask-content {
+                    width: 100%;
+                    margin-bottom: 3rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    br {
+                        display: none !important;
+                    }
+
+                    p {
+                        margin-top: 1.2rem;
+                    }
+                }
+            }
+
+            .bg-intro-mask {
+                .mask-city {
+                    background-size: 1280px;
+                    background-position: 75% bottom;
+                }
+
+                .mask-city_after {
+                    background-size: 1280px;
+                    background-position: 75% bottom;
+                }
+            }
+        }
+
         &.multi-chain_wrap {
             padding: 6rem 2.4rem 0;
+
             .chain-item_wrap {
                 flex-direction: column;
 
-                & > div {
+                &>div {
                     width: 100%;
                     max-width: 60rem;
                     margin: 0 auto;
@@ -1254,15 +1370,39 @@ footer {
 
             .common-content {
                 padding: 0 2.4rem;
+
+                .arrow-box {
+                    flex-direction: row;
+                    margin: 3rem 0;
+
+                    >div {
+                        margin: 0 1.6rem;
+
+                        .arrows {
+                            transform: rotate(90deg);
+                        }
+
+                        &.right_arrow {
+                            flex-direction: column-reverse;
+                            margin-top: 0;
+
+                            .arrows {
+                                margin-left: -0.8rem;
+                            }
+                        }
+                    }
+                }
             }
-            
+
             .metatrader4_intro {
                 flex-direction: column;
+
                 .text-box {
                     width: 100%;
                     margin-bottom: 2.4rem;
                     padding-right: 0;
                 }
+
                 .metatrader4_img {
                     width: 100%;
                     max-width: 45rem;
@@ -1281,28 +1421,34 @@ footer {
             .common-content {
                 padding: 0 2.4rem;
             }
+
             .wallet-item h4 {
                 font-size: 1.8rem;
             }
+
             .wallet_img {
                 width: 90%;
                 margin: 0 auto;
                 margin-bottom: 3rem;
             }
-            
+
         }
     }
 
     .news_wrap {
         margin: 10rem 0;
+
         a {
             flex-direction: column;
-           & > div {
+
+            &>div {
                 flex-direction: column;
+
                 h3 {
                     font-size: 2.2rem;
                     margin: 1rem 0;
                 }
+
                 .news-text::after {
                     right: inherit;
                     top: inherit;
@@ -1311,6 +1457,61 @@ footer {
                     bottom: -5rem;
                     width: 2.5rem;
                     background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .section {
+        &-intro {
+            .intro-mask-1 {
+                padding: 4rem 2.4rem;
+
+                .title-wrap {
+                    .title {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        h3 {
+                            font-size: 3.2rem;
+
+                        }
+
+                        .cross {
+                            position: relative;
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            margin: 1.2rem 0;
+                        }
+                    }
+
+                    p {
+                        br {
+                            display: none;
+                        }
+                    }
+
+                }
+
+                .title-map {
+                    width: 100%;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+
+                    &-line {
+                        display: none;
+                    }
+
+                    &-content {
+                        margin-bottom: 1.6rem;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
                 }
             }
         }

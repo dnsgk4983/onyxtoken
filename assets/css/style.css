@@ -202,6 +202,10 @@ a {
   display: flex;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -314,6 +318,14 @@ a {
     opacity: 0;
   }
 }
+@keyframes dungdung {
+  0%, 100% {
+    transform: translateY(15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
 .default {
   position: relative;
 }
@@ -403,29 +415,16 @@ a {
   display: block;
   color: #fff;
   padding: 0.8rem 1.2rem;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 2rem;
   transition: all 0.3s;
   background: transparent;
   overflow: hidden;
-}
-.head .nav-content .nav-list .nav-item.connect a:before, .head .nav-content .nav-list .nav-item.wallet a:before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(45deg, #8341B1 0%, #092576 100%);
-  opacity: 0;
-  transition: all 0.3s;
 }
 .head .nav-content .nav-list .nav-item.connect a:hover, .head .nav-content .nav-list .nav-item.wallet a:hover {
   color: #fff;
-}
-.head .nav-content .nav-list .nav-item.connect a:hover:before, .head .nav-content .nav-list .nav-item.wallet a:hover:before {
-  opacity: 1;
+  background: linear-gradient(45deg, #092576 0%, #8341B1 100%);
 }
 .head .nav-content .nav-list .nav-item.wallet {
   margin-left: 2rem;
@@ -616,7 +615,7 @@ a {
 }
 .section-intro {
   width: 100%;
-  height: calc(200vh + 14.4rem);
+  height: 200vh;
 }
 .section-intro .bg-intro-mask {
   z-index: -2;
@@ -633,6 +632,13 @@ a {
   height: 100%;
   vertical-align: middle;
   margin-right: -0.25em;
+}
+.section-intro .bg-intro-mask .mask-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: 100%;
 }
 .section-intro .bg-intro-mask .mask-1 .vertical-centered-box {
   z-index: -2;
@@ -709,7 +715,7 @@ a {
   font-size: 8rem;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px #ffff;
   background: url("../images/back.png");
   -webkit-background-clip: text;
   background-position: 0 0;
@@ -755,7 +761,7 @@ a {
   align-items: center;
   width: fit-content;
   padding: 2.4rem 3.2rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: 1px solid #ccc;
   background: rgba(28, 40, 56, 0.7);
 }
@@ -767,7 +773,15 @@ a {
   font-weight: 400;
 }
 .section-intro .intro-mask-1 .title-map-content i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2rem;
+  height: 2rem;
   margin-right: 0.4rem;
+}
+.section-intro .intro-mask-1 .title-map-content i img {
+  width: 100%;
+  height: 100%;
 }
 .section-intro .intro-mask-1 .title-map-line {
   width: 2.2rem;
@@ -789,7 +803,7 @@ a {
   padding: 1.2rem 4.8rem 1.2rem 2.4rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  background-color: #151f2c;
+  background-color: rgba(21, 31, 44, 0.75);
 }
 .section-intro .intro-mask-1 .action a:after {
   content: "";
@@ -805,6 +819,10 @@ a {
   right: 1.8rem;
 }
 .section-intro .intro-mask-2 {
+  position: sticky;
+  top: 6rem;
+}
+.section-intro .intro-mask-2-wrap {
   z-index: 1;
   position: absolute;
   top: 50rem;
@@ -815,8 +833,6 @@ a {
   opacity: 0;
 }
 .section-intro .intro-mask-2 .common-content {
-  position: sticky;
-  top: 6rem;
   display: flex;
   justify-content: space-between;
   gap: 126px;
@@ -833,12 +849,13 @@ a {
   font-weight: 400;
   margin-top: 2rem;
 }
-.section-intro .intro-mask-3 {
+.section-intro .intro-mask-2-card {
   z-index: 5;
   position: relative;
   color: #192F39;
+  margin-top: 10rem;
 }
-.section-intro .intro-mask-3-effect {
+.section-intro .intro-mask-2-card-effect {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -848,36 +865,36 @@ a {
   margin: 0 auto;
   filter: blur(20px);
 }
-.section-intro .intro-mask-3-effect .effect {
+.section-intro .intro-mask-2-card-effect .effect {
   position: absolute;
   top: 3rem;
   border-radius: 50%;
 }
-.section-intro .intro-mask-3-effect .effect-1 {
+.section-intro .intro-mask-2-card-effect .effect-1 {
   width: 36.4rem;
   height: 36.4rem;
   background-color: #C7D7FF;
   animation: circleSpin 6s infinite linear 1s;
 }
-.section-intro .intro-mask-3-effect .effect-2 {
+.section-intro .intro-mask-2-card-effect .effect-2 {
   right: -10%;
   width: 48.8rem;
   height: 48.8rem;
   background-color: #E5E3FB;
   animation: circleSpin 12s infinite linear 1s;
 }
-.section-intro .intro-mask-3 .common-content {
+.section-intro .intro-mask-2-card .common-content {
   padding: 10rem 6rem;
   border-radius: 3rem;
   background: url("../images/bg_mask3.png") no-repeat;
   box-sizing: border-box;
   overflow: hidden;
 }
-.section-intro .intro-mask-3 .common-content .mask-text-box {
+.section-intro .intro-mask-2-card .common-content .mask-text-box {
   max-width: 43.5rem;
   line-height: 1.2;
 }
-.section-intro .intro-mask-3 .common-content .mask-text-box p {
+.section-intro .intro-mask-2-card .common-content .mask-text-box p {
   font-size: 1.6rem;
   margin-top: 3rem;
 }
@@ -1047,6 +1064,12 @@ a {
   transform: translate(12px, 0) rotate(-135deg);
   animation: arrows 1.5s linear infinite -0.75s;
 }
+.section.partnership_wrap h3 {
+  margin-bottom: 5rem;
+}
+.section.partnership_wrap .swiper-wrapper {
+  align-items: center;
+}
 .section.wallet_wrap {
   background: #fff;
 }
@@ -1077,6 +1100,9 @@ a {
 .section.wallet_wrap .common-content .wallet-item p {
   font-size: 1.6rem;
   line-height: 1.4;
+}
+.section.wallet_wrap .common-content .wallet_img {
+  animation: dungdung 3s infinite linear;
 }
 
 .news_wrap {
@@ -1146,6 +1172,7 @@ footer .common-content p {
     padding: 0 1.6rem;
     box-sizing: border-box;
   }
+
   .head {
     padding: 0 1.6rem;
     box-sizing: border-box;
@@ -1154,16 +1181,20 @@ footer .common-content p {
     width: 100%;
     padding: 0;
   }
+
   .section-title {
     font-size: 3.6rem;
   }
+  .section-intro {
+    height: auto;
+  }
   .section-intro .intro-mask-1 {
-    left: 0;
-    padding: 12rem 3.2rem;
+    height: auto;
+    padding: 8rem 3.2rem;
     box-sizing: border-box;
   }
   .section-intro .intro-mask-1 .title-wrap .title h3 {
-    font-size: 6rem;
+    font-size: 5.4rem;
   }
   .section-intro .intro-mask-1 .title-wrap .title .cross {
     width: 3rem;
@@ -1173,21 +1204,30 @@ footer .common-content p {
   .section-intro .intro-mask-1 .title-wrap p {
     font-size: 1.4rem;
   }
+  .section-intro .intro-mask-2 {
+    position: relative;
+    top: auto;
+  }
+  .section-intro .intro-mask-2-wrap {
+    position: relative;
+    top: auto;
+    bottom: auto;
+  }
   .section-intro .intro-mask-2 .common-content {
     gap: 0 5%;
-    padding: 12rem 3.2rem;
+    padding: 0 3.2rem;
   }
-  .section-intro .intro-mask-3 {
+  .section-intro .intro-mask-2-card {
     padding: 0 3.2rem;
     box-sizing: border-box;
   }
-  .section-intro .intro-mask-3-effect {
+  .section-intro .intro-mask-2-card-effect {
     max-width: 100%;
   }
-  .section-intro .intro-mask-3 .common-content {
+  .section-intro .intro-mask-2-card .common-content {
     padding: 4rem 3.2rem;
   }
-  .section-intro .intro-mask-3 .common-content img {
+  .section-intro .intro-mask-2-card .common-content img {
     min-width: 48rem;
     max-width: 100%;
   }
@@ -1209,9 +1249,11 @@ footer .common-content p {
   .default {
     overflow-x: hidden;
   }
+
   .pt-100 {
     padding-top: 8rem;
   }
+
   .head {
     padding: 0;
   }
@@ -1267,6 +1309,7 @@ footer .common-content p {
     margin-top: -0.5rem;
     transform: rotate(-45deg);
   }
+
   .section-title {
     font-size: 3.2rem;
   }
@@ -1290,12 +1333,14 @@ footer .common-content p {
   .section.wallet_wrap .wallet_img img {
     width: 100%;
   }
+
   .news_wrap a .news_logo {
     width: 4.5rem;
   }
   .news_wrap a > div h3 {
     font-size: 2.8rem;
   }
+
   footer .common-content {
     flex-direction: column-reverse;
   }
@@ -1307,8 +1352,62 @@ footer .common-content p {
   .pt-100 {
     padding-top: 6rem;
   }
+
   .section-title {
     font-size: 2.4rem;
+  }
+  .section-intro .intro-mask-1 {
+    padding: 6rem 3.2rem;
+  }
+  .section-intro .intro-mask-1 .title-wrap .title h3 {
+    font-size: 3.6rem;
+  }
+  .section-intro .intro-mask-1 .title-wrap .title .cross {
+    width: 2rem;
+    height: 2rem;
+  }
+  .section-intro .intro-mask-1 .title-map {
+    margin: 3.2rem 0;
+    padding: 1.6rem 2rem;
+  }
+  .section-intro .intro-mask-1 .title-map-line {
+    width: 1.8rem;
+  }
+  .section-intro .intro-mask-1 .action {
+    margin: 0;
+  }
+  .section-intro .intro-mask-2 .common-content {
+    flex-direction: column;
+  }
+  .section-intro .intro-mask-2-card .common-content {
+    flex-direction: column-reverse;
+  }
+  .section-intro .intro-mask-2-card .common-content img {
+    min-width: 0;
+  }
+  .section-intro .intro-mask-2-card .mask-text-box {
+    margin-top: 1.2rem;
+  }
+  .section-intro .intro-mask-2 .intro-mask-content {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .section-intro .intro-mask-2 .intro-mask-content:last-child {
+    margin-bottom: 0;
+  }
+  .section-intro .intro-mask-2 .intro-mask-content br {
+    display: none !important;
+  }
+  .section-intro .intro-mask-2 .intro-mask-content p {
+    margin-top: 1.2rem;
+  }
+  .section-intro .bg-intro-mask .mask-city {
+    background-size: 1280px;
+    background-position: 75% bottom;
+  }
+  .section-intro .bg-intro-mask .mask-city_after {
+    background-size: 1280px;
+    background-position: 75% bottom;
   }
   .section.multi-chain_wrap {
     padding: 6rem 2.4rem 0;
@@ -1330,6 +1429,23 @@ footer .common-content p {
   }
   .section.metatrader4_wrap .common-content {
     padding: 0 2.4rem;
+  }
+  .section.metatrader4_wrap .common-content .arrow-box {
+    flex-direction: row;
+    margin: 3rem 0;
+  }
+  .section.metatrader4_wrap .common-content .arrow-box > div {
+    margin: 0 1.6rem;
+  }
+  .section.metatrader4_wrap .common-content .arrow-box > div .arrows {
+    transform: rotate(90deg);
+  }
+  .section.metatrader4_wrap .common-content .arrow-box > div.right_arrow {
+    flex-direction: column-reverse;
+    margin-top: 0;
+  }
+  .section.metatrader4_wrap .common-content .arrow-box > div.right_arrow .arrows {
+    margin-left: -0.8rem;
   }
   .section.metatrader4_wrap .metatrader4_intro {
     flex-direction: column;
@@ -1359,6 +1475,7 @@ footer .common-content p {
     margin: 0 auto;
     margin-bottom: 3rem;
   }
+
   .news_wrap {
     margin: 10rem 0;
   }
@@ -1380,6 +1497,42 @@ footer .common-content p {
     bottom: -5rem;
     width: 2.5rem;
     background-size: contain;
+  }
+}
+@media (max-width: 540px) {
+  .section-intro .intro-mask-1 {
+    padding: 4rem 2.4rem;
+  }
+  .section-intro .intro-mask-1 .title-wrap .title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-intro .intro-mask-1 .title-wrap .title h3 {
+    font-size: 3.2rem;
+  }
+  .section-intro .intro-mask-1 .title-wrap .title .cross {
+    position: relative;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 1.2rem 0;
+  }
+  .section-intro .intro-mask-1 .title-wrap p br {
+    display: none;
+  }
+  .section-intro .intro-mask-1 .title-map {
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .section-intro .intro-mask-1 .title-map-line {
+    display: none;
+  }
+  .section-intro .intro-mask-1 .title-map-content {
+    margin-bottom: 1.6rem;
+  }
+  .section-intro .intro-mask-1 .title-map-content:last-child {
+    margin-bottom: 0;
   }
 }
 

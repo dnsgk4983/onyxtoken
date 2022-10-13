@@ -22,7 +22,7 @@ const mask3 = gsap.timeline({
     scrub: true,
   },
 });
-mask1.to(".section-intro .intro-mask-2", {
+mask1.to(".section-intro .intro-mask-2-wrap", {
   opacity: 1,
   duration: 1
 });
@@ -42,24 +42,27 @@ menuBtn.addEventListener("click", (e) => {
   nav.classList.toggle("on");
 });
 
-// var galleryTop = new Swiper('.team-gallery', {
-//   spaceBetween: 10,
-//   effect: "fade",
-//   loop: true,
-//   loopedSlides: 3
-// });
-// var galleryThumbs = new Swiper('.gallery-thumbs', {
-//   spaceBetween: 10,
-//   direction: "vertical",
-//   pagination: {
-//     el: ".swiper-pagination",
-//   },
-//   centeredSlides: false,
-//   slidesPerView: 3,
-//   touchRatio: 0.2,
-//   slideToClickedSlide: true,
-//   loop: true,
-//   loopedSlides: 1
-// });
-// galleryTop.controller.control = galleryThumbs;
-// galleryThumbs.controller.control = galleryTop;
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  autoplay: true,
+  loop: true,
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    }
+  }
+});
