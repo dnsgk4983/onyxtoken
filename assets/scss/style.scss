@@ -686,7 +686,7 @@
             padding: 0 12.5rem;
 
             &>div {
-                width: 50%;
+                width: 49%;
                 max-width: 400px;
                 margin-top: 4.5rem;
 
@@ -717,8 +717,20 @@
                 align-items: center;
             }
 
+            .text-box {
+                width: 60%;
+                padding-right: 3rem;
+            }
             .text-box p {
                 margin-top: 1.6rem;
+            }
+
+            .metatrader4_img {
+                width: 40%;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .metatrader4_detail {
@@ -851,144 +863,6 @@
             }
         }
     }
-
-    &.team_wrap {
-        position: relative;
-
-        .team-gallery {
-            // position: relative;
-            background: url(../images/slide_bg01.png) no-repeat;
-            background-size: cover;
-            padding: 4rem 0 10rem;
-            min-height: 50rem;
-            max-height: 50rem;
-            box-sizing: border-box;
-
-            .section-title {
-                margin-bottom: 6rem;
-            }
-
-            .swiper-wrapper {
-                margin-left: 3rem;
-            }
-
-            .swiper-slide {
-                opacity: 0 !important;
-                transition: all .3s;
-            }
-
-            .swiper-slide-active {
-                opacity: 1 !important;
-            }
-
-            .swiper-slide-container {
-                max-width: 630px;
-                width: 65%;
-
-                .slide-item {
-                    display: flex;
-                    align-items: flex-start;
-
-                    img {
-                        width: 120px;
-                        border: 2px solid #323F46;
-                        border-radius: 100%;
-                        margin-right: 2rem;
-                    }
-
-                    .slide-text {
-                        flex: 1;
-
-                        h4 {
-                            font-size: 2rem;
-                            font-weight: 600;
-                            margin-bottom: 1.6rem;
-                        }
-
-                        p {
-                            font-size: 1.6rem;
-                        }
-                    }
-                }
-            }
-        }
-
-        .gallery-thumbs_wrap {
-            position: absolute;
-            right: 5rem;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            max-width: 31.5rem;
-            box-sizing: border-box;
-            z-index: 3;
-
-            .gallery-thumbs {
-                position: relative;
-                height: 100%;
-            }
-
-            .swiper-slide-container {
-                background: #fff;
-            }
-
-            .swiper-container-vertical>.swiper-pagination-bullets {
-                right: inherit;
-                left: -2rem;
-            }
-
-            .swiper-pagination-bullet {
-                transition: all .3s;
-            }
-
-            .swiper-pagination-bullet-active {
-                height: 2.8rem;
-                border-radius: 50px;
-                background: #393C71;
-            }
-
-            .swiper-slide {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                height: 100%;
-                opacity: 0.4;
-            }
-
-            .swiper-slide-active {
-                border: 2px solid #192F39;
-                border-radius: 5px;
-                opacity: 1;
-            }
-
-            .swiper-slide-container {
-                width: 100%;
-                padding: 2.5rem 0;
-                box-sizing: border-box;
-
-                img {
-                    width: 5rem;
-                    margin-left: 2rem;
-                    margin-right: 2rem;
-                }
-
-                .slide-text {
-                    flex: 1;
-
-                    h4 {
-                        font-size: 1.6rem;
-                        font-weight: 600;
-                        margin-bottom: 5px;
-                    }
-
-                    p {
-                        font-size: 1.4rem;
-                    }
-                }
-            }
-        }
-    }
-
 
     &.wallet_wrap {
         background: #fff;
@@ -1123,8 +997,8 @@ footer {
             width: 100%;
             padding: 0;
         }
-
     }
+    
 
     .section {
         &-title {
@@ -1184,11 +1058,23 @@ footer {
         }
 
         &.multi-chain_wrap {
-            padding: 10rem 2.4rem 0;
+            padding: 10rem 2rem 0;
             box-sizing: border-box;
 
             .chain-item_wrap {
                 padding: 0;
+            }
+        }
+
+        &.metatrader4_wrap {
+            .common-content {
+                padding: 0 3.6rem;
+            }
+        }
+
+        &.wallet_wrap {
+            .common-content {
+                padding: 0 3.6rem;
             }
         }
     }
@@ -1272,6 +1158,159 @@ footer {
                             transform: rotate(-45deg);
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .section {
+        &-title {
+            font-size: 3.2rem;
+        }
+        &.multi-chain_wrap {
+            br {
+                display: none;
+            }
+
+            .chain-item_wrap > div h3 {
+                font-size: 2.4rem;
+            }
+        }
+
+        &.wallet_wrap {
+            br {
+                display: none;
+            }
+
+            .common-content {
+                flex-direction: column-reverse;
+            }
+
+            .wallet_img {
+                width: 100%;
+                max-width: 40rem;
+                margin-bottom: 3rem;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .news_wrap {
+        a {
+
+            .news_logo {
+                width: 4.5rem;
+            }
+            & > div {
+                h3 {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+    }
+
+    footer {
+        .common-content {
+            flex-direction: column-reverse;
+            p {
+                margin-top: 1.4rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+
+    .pt-100 {
+        padding-top: 6rem;
+    }
+
+    .section {
+        &-title {
+            font-size: 2.4rem;
+        }
+        &.multi-chain_wrap {
+            padding: 6rem 2.4rem 0;
+            .chain-item_wrap {
+                flex-direction: column;
+
+                & > div {
+                    width: 100%;
+                    max-width: 60rem;
+                    margin: 0 auto;
+                    margin-bottom: 2.4rem;
+
+                    h3 {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+
+        &.metatrader4_wrap {
+            padding-bottom: 3rem;
+
+            .common-content {
+                padding: 0 2.4rem;
+            }
+            
+            .metatrader4_intro {
+                flex-direction: column;
+                .text-box {
+                    width: 100%;
+                    margin-bottom: 2.4rem;
+                    padding-right: 0;
+                }
+                .metatrader4_img {
+                    width: 100%;
+                    max-width: 45rem;
+                    margin: 0 auto;
+                }
+            }
+
+            .metatrader4_detail {
+                flex-direction: column;
+
+                align-items: center;
+            }
+        }
+
+        &.wallet_wrap {
+            .common-content {
+                padding: 0 2.4rem;
+            }
+            .wallet-item h4 {
+                font-size: 1.8rem;
+            }
+            .wallet_img {
+                width: 90%;
+                margin: 0 auto;
+                margin-bottom: 3rem;
+            }
+            
+        }
+    }
+
+    .news_wrap {
+        margin: 10rem 0;
+        a {
+            flex-direction: column;
+           & > div {
+                flex-direction: column;
+                h3 {
+                    font-size: 2.2rem;
+                    margin: 1rem 0;
+                }
+                .news-text::after {
+                    right: inherit;
+                    top: inherit;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -5rem;
+                    width: 2.5rem;
+                    background-size: contain;
                 }
             }
         }

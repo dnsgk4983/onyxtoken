@@ -42,24 +42,24 @@ menuBtn.addEventListener("click", (e) => {
   nav.classList.toggle("on");
 });
 
-var galleryTop = new Swiper('.team-gallery', {
-  spaceBetween: 10,
-  effect: "fade",
-  loop: true,
-  loopedSlides: 3
-});
-var galleryThumbs = new Swiper('.gallery-thumbs', {
-  spaceBetween: 10,
-  direction: "vertical",
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  centeredSlides: false,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  slideToClickedSlide: true,
-  loop: true,
-  loopedSlides: 1
-});
-galleryTop.controller.control = galleryThumbs;
-galleryThumbs.controller.control = galleryTop;
+// var galleryTop = new Swiper('.team-gallery', {
+//   spaceBetween: 10,
+//   effect: "fade",
+//   loop: true,
+//   loopedSlides: 3
+// });
+// var galleryThumbs = new Swiper('.gallery-thumbs', {
+//   spaceBetween: 10,
+//   direction: "vertical",
+//   pagination: {
+//     el: ".swiper-pagination",
+//   },
+//   centeredSlides: false,
+//   slidesPerView: 3,
+//   touchRatio: 0.2,
+//   slideToClickedSlide: true,
+//   loop: true,
+//   loopedSlides: 1
+// });
+// galleryTop.controller.control = galleryThumbs;
+// galleryThumbs.controller.control = galleryTop;
