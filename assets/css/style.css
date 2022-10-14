@@ -616,6 +616,8 @@ a {
 .section-intro {
   width: 100%;
   height: 200vh;
+  max-height: 1900px;
+  overflow-x: hidden;
 }
 .section-intro .bg-intro-mask {
   z-index: -2;
@@ -685,6 +687,7 @@ a {
   width: 100%;
   height: 100%;
   background: url("../images/bg_city.png") no-repeat bottom center;
+  background-size: contain;
 }
 .section-intro .bg-intro-mask .mask-city_after {
   position: fixed;
@@ -695,6 +698,7 @@ a {
   width: 100%;
   height: 100%;
   background: url("../images/bg_city_after.png") no-repeat bottom center;
+  background-size: contain;
   animation: bgCity 1.2s linear infinite;
 }
 .section-intro .intro-mask-1 {
@@ -715,7 +719,7 @@ a {
   font-size: 8rem;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1px #ffff;
+  -webkit-text-stroke: 1px white;
   background: url("../images/back.png");
   -webkit-background-clip: text;
   background-position: 0 0;
@@ -889,6 +893,9 @@ a {
   background: url("../images/bg_mask3.png") no-repeat;
   box-sizing: border-box;
   overflow: hidden;
+  gap: 3rem;
+  align-items: center;
+  background-size: cover;
 }
 .section-intro .intro-mask-2-card .common-content .mask-text-box {
   max-width: 43.5rem;
@@ -1172,7 +1179,6 @@ footer .common-content p {
     padding: 0 1.6rem;
     box-sizing: border-box;
   }
-
   .head {
     padding: 0 1.6rem;
     box-sizing: border-box;
@@ -1181,7 +1187,6 @@ footer .common-content p {
     width: 100%;
     padding: 0;
   }
-
   .section-title {
     font-size: 3.6rem;
   }
@@ -1244,16 +1249,18 @@ footer .common-content p {
   .section.wallet_wrap .common-content {
     padding: 0 3.6rem;
   }
+  .footer {
+    padding: 0 1.6rem;
+    box-sizing: border-box;
+  }
 }
 @media (max-width: 1024px) {
   .default {
     overflow-x: hidden;
   }
-
   .pt-100 {
     padding-top: 8rem;
   }
-
   .head {
     padding: 0;
   }
@@ -1309,15 +1316,26 @@ footer .common-content p {
     margin-top: -0.5rem;
     transform: rotate(-45deg);
   }
-
   .section-title {
     font-size: 3.2rem;
+  }
+  .section-intro br {
+    display: none;
+  }
+  .section-intro .bg-intro-mask .mask-city {
+    background-size: auto;
+  }
+  .section-intro .bg-intro-mask .mask-city_after {
+    background-size: auto;
   }
   .section.multi-chain_wrap br {
     display: none;
   }
   .section.multi-chain_wrap .chain-item_wrap > div h3 {
     font-size: 2.4rem;
+  }
+  .section.partnership_wrap h3 {
+    margin-bottom: 3rem;
   }
   .section.wallet_wrap br {
     display: none;
@@ -1333,14 +1351,12 @@ footer .common-content p {
   .section.wallet_wrap .wallet_img img {
     width: 100%;
   }
-
   .news_wrap a .news_logo {
     width: 4.5rem;
   }
   .news_wrap a > div h3 {
     font-size: 2.8rem;
   }
-
   footer .common-content {
     flex-direction: column-reverse;
   }
@@ -1348,11 +1364,22 @@ footer .common-content p {
     margin-top: 1.4rem;
   }
 }
+@media (max-width: 920px) {
+  .section-intro .intro-mask-2-card .common-content {
+    flex-direction: column-reverse;
+  }
+  .section-intro .intro-mask-2-card .common-content img {
+    min-width: inherit;
+  }
+  .section-intro .intro-mask-2-card .common-content .mask-text-box {
+    max-width: inherit;
+    padding-top: 2rem;
+  }
+}
 @media (max-width: 767px) {
   .pt-100 {
     padding-top: 6rem;
   }
-
   .section-title {
     font-size: 2.4rem;
   }
@@ -1378,9 +1405,14 @@ footer .common-content p {
   }
   .section-intro .intro-mask-2 .common-content {
     flex-direction: column;
+    padding: 0 2.4rem;
+  }
+  .section-intro .intro-mask-2-card {
+    padding: 0 2.4rem;
   }
   .section-intro .intro-mask-2-card .common-content {
     flex-direction: column-reverse;
+    padding: 4rem 2.4rem;
   }
   .section-intro .intro-mask-2-card .common-content img {
     min-width: 0;
@@ -1411,6 +1443,9 @@ footer .common-content p {
   }
   .section.multi-chain_wrap {
     padding: 6rem 2.4rem 0;
+  }
+  .section.multi-chain_wrap .common-content {
+    padding: 0;
   }
   .section.multi-chain_wrap .chain-item_wrap {
     flex-direction: column;
@@ -1464,6 +1499,9 @@ footer .common-content p {
     flex-direction: column;
     align-items: center;
   }
+  .section.partnership_wrap h3 {
+    margin-bottom: 1rem;
+  }
   .section.wallet_wrap .common-content {
     padding: 0 2.4rem;
   }
@@ -1475,7 +1513,6 @@ footer .common-content p {
     margin: 0 auto;
     margin-bottom: 3rem;
   }
-
   .news_wrap {
     margin: 10rem 0;
   }
@@ -1484,6 +1521,7 @@ footer .common-content p {
   }
   .news_wrap a > div {
     flex-direction: column;
+    margin-left: 0;
   }
   .news_wrap a > div h3 {
     font-size: 2.2rem;
@@ -1500,6 +1538,9 @@ footer .common-content p {
   }
 }
 @media (max-width: 540px) {
+  .section-description {
+    font-size: 1.5rem;
+  }
   .section-intro .intro-mask-1 {
     padding: 4rem 2.4rem;
   }
@@ -1533,6 +1574,38 @@ footer .common-content p {
   }
   .section-intro .intro-mask-1 .title-map-content:last-child {
     margin-bottom: 0;
+  }
+  .section-intro .mask-text-box p {
+    font-size: 1.5rem;
+  }
+  .section.multi-chain_wrap .section-description {
+    font-size: 1.5rem;
+  }
+  .section.multi-chain_wrap .chain-item_wrap > div p {
+    font-size: 1.5rem;
+  }
+  .section.wallet_wrap .common-content .wallet-item img {
+    width: 30px;
+    margin: 0 10px 0 0;
+  }
+  .section.wallet_wrap .common-content .wallet-item p {
+    font-size: 1.5rem;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .common-content .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  footer .common-content p {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 414px) {
+  .section-intro .intro-mask-1 {
+    padding: 0rem 2.4rem 4rem;
+    top: 4rem;
   }
 }
 
