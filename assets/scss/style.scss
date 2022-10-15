@@ -1250,13 +1250,13 @@ footer {
             }
 
             .common-content {
-                flex-direction: column-reverse;
+                flex-direction: column;
             }
 
             .wallet_img {
                 width: 100%;
                 max-width: 40rem;
-                margin-bottom: 3rem;
+                margin-top: 3rem;
 
                 img {
                     width: 100%;
@@ -1422,7 +1422,6 @@ footer {
         }
 
         &.metatrader4_wrap {
-            padding-bottom: 3rem;
 
             .common-content {
                 padding: 0 2.4rem;
@@ -1466,10 +1465,14 @@ footer {
                 }
             }
 
-            .metatrader4_detail {
+            .common-content .metatrader4_detail {
                 flex-direction: column;
-
                 align-items: center;
+                .metatrader4-card::after {
+                    width: 85%;
+                    height: 85%;
+                    margin: 0 auto;
+                }
             }
         }
         &.partnership_wrap h3 {
@@ -1488,7 +1491,7 @@ footer {
             .wallet_img {
                 width: 90%;
                 margin: 0 auto;
-                margin-bottom: 3rem;
+                margin-top: 3rem;
                 max-width: 240px;
             }
 
@@ -1535,7 +1538,7 @@ footer {
         }
         &-intro {
             .intro-mask-1 {
-                padding: 4rem 2.4rem;
+                padding: 3rem 2.4rem;
 
                 .title-wrap {
                     .title {
@@ -1548,10 +1551,11 @@ footer {
                         }
 
                         .cross {
-                            position: relative;
-                            width: 2.4rem;
-                            height: 2.4rem;
-                            margin: 1.2rem 0;
+                            display: none;
+                            // position: relative;
+                            // width: 2.4rem;
+                            // height: 2.4rem;
+                            // margin: 0.6rem 0;
                         }
                     }
 
@@ -1574,7 +1578,7 @@ footer {
                     }
 
                     &-content {
-                        margin-bottom: 1.6rem;
+                        margin-bottom: 1rem;
 
                         &:last-child {
                             margin-bottom: 0;
@@ -1652,7 +1656,7 @@ footer {
 }
 @media(max-width: 414px) {
     .section-intro .intro-mask-1 {
-        padding: 0rem 2.4rem 4rem;
+        // padding: 0rem 2.4rem 4rem;
         top: 4rem;
     }
 }
