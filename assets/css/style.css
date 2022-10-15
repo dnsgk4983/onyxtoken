@@ -1278,6 +1278,7 @@ footer .common-content p {
 
   .head {
     padding: 0;
+    position: fixed;
   }
   .head .nav-logo {
     padding: 0 1.6rem;
@@ -1328,7 +1329,7 @@ footer .common-content p {
     margin-top: 0.5rem;
   }
   .head .nav-content.on .mobile-menu .spinner.right {
-    margin-top: -0.5rem;
+    margin-top: -0.4rem;
     transform: rotate(-45deg);
   }
 

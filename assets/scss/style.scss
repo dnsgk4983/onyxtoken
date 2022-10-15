@@ -1138,6 +1138,7 @@ footer {
 
     .head {
         padding: 0;
+        position: fixed;
 
         .nav-logo {
             padding: 0 1.6rem;
@@ -1201,7 +1202,7 @@ footer {
                         margin-top: 0.5rem;
 
                         &.right {
-                            margin-top: -0.5rem;
+                            margin-top: -0.4rem;
                             transform: rotate(-45deg);
                         }
                     }
