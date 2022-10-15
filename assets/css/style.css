@@ -1657,10 +1657,5 @@ footer .common-content p {
     font-size: 1.4rem;
   }
 }
-@media (max-width: 414px) {
-  .section-intro .intro-mask-1 {
-    top: 4rem;
-  }
-}
 
 /*# sourceMappingURL=style.css.map */
