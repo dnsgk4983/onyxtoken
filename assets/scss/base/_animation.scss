@@ -112,19 +112,43 @@
     }
 }
 
-@property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-}
+// @property --rotate {
+//     syntax: "<angle>";
+//     initial-value: 132deg;
+//     inherits: false;
+// }
 
 @keyframes spin {
     0% {
-        --rotate: 0deg;
-    }
+        // --rotate: 0deg;
+        // transform: rotate(0deg);
 
+        filter: hue-rotate(0);
+    }
+    50% {
+        filter: hue-rotate(180deg);
+    }
     100% {
-        --rotate: 360deg;
+        // --rotate: 360deg;
+        // transform: rotate(360deg);  
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        // --rotate: 0deg;
+        // transform: rotate(0deg);
+
+        filter: hue-rotate(0) blur(5rem);
+    }
+    50% {
+        filter: hue-rotate(180deg) blur(5rem);
+    }
+    100% {
+        // --rotate: 360deg;
+        // transform: rotate(360deg);  
+        filter: hue-rotate(360deg), blur(5rem);
     }
 }
 
