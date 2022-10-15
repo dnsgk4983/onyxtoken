@@ -43,7 +43,7 @@ menuBtn.addEventListener("click", (e) => {
 });
 
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 4,
+  slidesPerView: 1,
   spaceBetween: 30,
   autoplay: true,
   loop: true,
