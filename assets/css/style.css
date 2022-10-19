@@ -460,7 +460,6 @@ button {
   top: 5rem;
   background-color: #F5F5F5;
   min-width: 160px;
-  overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 1rem;
@@ -532,7 +531,10 @@ button {
   background: url("../images/ico_youtube.png") no-repeat;
   background-size: cover;
 }
-.head .nav-content .nav-list .nav-item .show {
+.head .nav-content .nav-list .nav-item.community svg {
+  display: none;
+}
+.head .nav-content .nav-list .nav-item.community.show .dropdown-content {
   display: block;
 }
 .head .nav-content .lang div {
@@ -1442,6 +1444,8 @@ footer .common-content p {
     position: absolute;
     top: 6rem;
     right: -100%;
+    width: 100%;
+    max-width: 60rem;
     justify-content: flex-start;
     flex-direction: column;
     height: calc(100vh - 6rem);
@@ -1487,6 +1491,41 @@ footer .common-content p {
     margin-top: 3px;
     margin-left: -1.6rem;
   }
+  .head .nav-content .nav-list .nav-item.connect a {
+    max-width: 160px;
+  }
+  .head .nav-content .nav-list .nav-item.community {
+    display: block;
+  }
+  .head .nav-content .nav-list .nav-item.community a {
+    box-sizing: border-box;
+    position: relative;
+  }
+  .head .nav-content .nav-list .nav-item.community a svg {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    transition: all 0.3s;
+  }
+  .head .nav-content .nav-list .nav-item.community.show svg {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .head .nav-content .nav-list .nav-item.community .dropdown-content {
+    position: relative;
+    width: 100%;
+    top: inherit;
+    box-sizing: border-box;
+    background: #24374f;
+    border-radius: 0;
+    min-width: inherit;
+    box-shadow: none;
+  }
+  .head .nav-content .nav-list .nav-item.community .dropdown-content a {
+    color: #ccc;
+  }
   .head .nav-content .mobile-menu {
     display: flex;
     margin-right: 1.6rem;
@@ -1497,6 +1536,8 @@ footer .common-content p {
   }
   .head .nav-content.on .nav-list {
     right: 0;
+    overflow-y: scroll;
+    padding-bottom: 5rem;
   }
   .head .nav-content.on .mobile-menu {
     position: relative;
