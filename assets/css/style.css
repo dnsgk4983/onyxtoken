@@ -459,7 +459,7 @@ button {
   position: absolute;
   top: 5rem;
   background-color: #F5F5F5;
-  min-width: 160px;
+  min-width: 16rem;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 1rem;
@@ -474,6 +474,14 @@ button {
 }
 .head .nav-content .nav-list .nav-item .dropdown-content a:hover {
   background-color: #e4e4e4;
+}
+.head .nav-content .nav-list .nav-item .dropdown-content a:first-child:hover {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.head .nav-content .nav-list .nav-item .dropdown-content a:last-child:hover {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .head .nav-content .nav-list .nav-item .dropdown-content a::before {
   content: "";
@@ -537,6 +545,12 @@ button {
 .head .nav-content .nav-list .nav-item.community.show .dropdown-content {
   display: block;
 }
+.head .nav-content .nav-list .nav-item .drop {
+  display: block;
+}
+.head .nav-content .nav-list .nav-item .dropOut {
+  display: none;
+}
 .head .nav-content .lang div {
   display: flex;
 }
@@ -570,6 +584,9 @@ button {
   margin: 0.2rem 0;
   background-color: #fff;
   transition: all 0.3s;
+}
+.head .nav-content.mo-nav {
+  display: none;
 }
 
 .bridge {
@@ -1279,6 +1296,80 @@ button {
   animation: dungdung 3s infinite linear;
 }
 
+.faq .faq-content {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 100%;
+  max-width: 920px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.faq .faq-content h1 {
+  padding: 3rem 0;
+}
+.faq .faq-content .topic {
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: solid 1px #ebebeb;
+}
+.faq .faq-content .topic .open {
+  cursor: pointer;
+  display: block;
+  padding: 0px;
+}
+.faq .faq-content .topic .open:hover {
+  opacity: 0.7;
+}
+.faq .faq-content .topic .expanded {
+  background-color: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+}
+.faq .faq-content .topic .question {
+  padding-top: 30px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1b2738;
+}
+.faq .faq-content .topic .answer {
+  font-size: 16px;
+  line-height: 26px;
+  display: none;
+  margin-bottom: 30px;
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.faq .faq-content .topic .faq-t {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: -55px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-left: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+.faq .faq-content .topic .faq-o {
+  top: -50px;
+  -moz-transform: rotate(-224deg);
+  -ms-transform: rotate(-224deg);
+  -webkit-transform: rotate(-224deg);
+  transform: rotate(-224deg);
+}
+
 .news_wrap {
   background: #fff;
   margin: 20rem 0;
@@ -1353,6 +1444,12 @@ footer .common-content p {
   .head .nav-content {
     width: 100%;
     padding: 0;
+    display: none;
+  }
+  .head .nav-content.mo-nav {
+    width: 100%;
+    padding: 0;
+    display: flex;
   }
 
   .section-title {
@@ -1604,6 +1701,10 @@ footer .common-content p {
   footer .common-content p {
     margin-top: 1.4rem;
   }
+
+  .faq .faq-content .topic .faq-t {
+    top: -45px;
+  }
 }
 @media (max-width: 920px) {
   .section-intro .intro-mask-2-card .common-content {
@@ -1785,6 +1886,10 @@ footer .common-content p {
     background-size: contain;
     background-position: center;
   }
+
+  .faq .faq-content .topic .faq-t {
+    top: -45px;
+  }
 }
 @media (max-width: 540px) {
   .section-description {
@@ -1877,6 +1982,41 @@ footer .common-content p {
   }
   footer .common-content p {
     font-size: 1.4rem;
+  }
+}
+@media (max-width: 414px) {
+  .faq-t {
+    display: none;
+  }
+
+  .faq .faq-content {
+    padding: 20px;
+  }
+
+  .faq .faq-content .topic {
+    padding: 10px;
+  }
+
+  .faq .faq-content h1 {
+    padding: 1rem 0;
+  }
+
+  .question {
+    padding-right: 0px;
+  }
+
+  .answer {
+    margin-bottom: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .faq .faq-content .topic .faq-t {
+    top: -40px;
+  }
+
+  .faq .faq-content .topic .answer {
+    padding: 0;
   }
 }
 

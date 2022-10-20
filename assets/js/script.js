@@ -1,21 +1,14 @@
-// 드롭다운
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+let hover = document.querySelector(".hover-community");
+let hoverList = document.querySelector(".dropdown-content");
 
-window.onclick = function(event) {
-if (!event.target.matches('.dropbtn')) {
-
-  var dropdowns = document.querySelector("community");
-  var i;
-  for (i = 0; i < dropdowns.length; i++) {
-    var openDropdown = dropdowns[i];
-    if (openDropdown.classList.contains('show')) {
-      openDropdown.classList.remove('show');
-    }
-  }
-}
-}
+hover.addEventListener("mouseenter", (e) => {
+  hoverList.classList.add("drop");
+  hoverList.classList.remove("dropOut");
+});
+hover.addEventListener("mouseleave", (e) => {
+  hoverList.classList.add("dropOut");
+  hoverList.classList.remove("drop");
+});
 
 const mask1 = gsap.timeline({
   scrollTrigger: {
@@ -54,9 +47,13 @@ mask3.to(".section-intro .intro-mask-1", {
   duration: 1
 });
 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
 let menuBtn = document.querySelector(".mobile-menu");
-let nav = document.querySelector(".nav-content");
+let nav = document.querySelector(".mo-nav");
+
 menuBtn.addEventListener("click", (e) => {
   nav.classList.toggle("on");
 });
@@ -83,5 +80,28 @@ var swiper = new Swiper(".mySwiper", {
       slidesPerView: 4,
       spaceBetween: 20,
     }
+  }
+});
+
+
+$(".open").click( function () {
+  var container = $(this).parents(".topic");
+  var answer = container.find(".answer");
+  var trigger = container.find(".faq-t");
+  
+  answer.slideToggle(200);
+  
+  if (trigger.hasClass("faq-o")) {
+    trigger.removeClass("faq-o");
+  }
+  else {
+    trigger.addClass("faq-o");
+  }
+  
+  if (container.hasClass("expanded")) {
+    container.removeClass("expanded");
+  }
+  else {
+    container.addClass("expanded");
   }
 });
