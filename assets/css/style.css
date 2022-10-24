@@ -1383,6 +1383,10 @@ button {
   justify-content: center;
   align-items: center;
 }
+.news_wrap a > div {
+  display: flex;
+  align-items: center;
+}
 .news_wrap a h3 {
   font-size: 3.6rem;
   font-weight: 600;
@@ -1956,21 +1960,20 @@ footer .common-content p {
   }
 
   .news_wrap {
-    padding: 16px 20px;
     border: 1px solid #0C232D;
     border-radius: 1rem;
   }
   .news_wrap a {
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
   }
   .news_wrap a .news_logo {
+    display: inline-block;
     width: 2.5rem;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    position: absolute;
-    left: -1rem;
-    top: 0;
+    margin-top: 0;
+    margin-right: 0;
   }
   .news_wrap a .and {
     display: none;
@@ -1979,9 +1982,12 @@ footer .common-content p {
     margin-top: 1rem;
   }
   .news_wrap a h3.subscribe {
-    margin-left: 2rem;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-top: 0;
   }
   .news_wrap a h3.news-text {
+    display: block;
     margin-left: -3rem;
   }
 
