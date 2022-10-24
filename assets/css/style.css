@@ -539,6 +539,10 @@ button {
   background: url("../images/ico_youtube.png") no-repeat;
   background-size: cover;
 }
+.head .nav-content .nav-list .nav-item .dropdown-content .yahoo::before {
+  background: url("../images/ico_yahoo.png") no-repeat;
+  background-size: cover;
+}
 .head .nav-content .nav-list .nav-item.community svg {
   display: none;
 }
