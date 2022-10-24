@@ -1434,6 +1434,10 @@ footer .common-content p {
   color: #7D8290;
 }
 
+.kr .section-intro .intro-mask-2-wrap {
+  bottom: calc(100vh - 90rem);
+}
+
 @media (max-width: 1280px) {
   .common-content {
     width: 100%;
