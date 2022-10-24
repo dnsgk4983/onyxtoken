@@ -1443,6 +1443,16 @@ footer {
         padding: 0 1.6rem;
         box-sizing: border-box;
     }
+
+    .kr {
+        .section {
+            &-intro {
+                .intro-mask-2-wrap {
+                    bottom: auto;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width: 1024px) {
