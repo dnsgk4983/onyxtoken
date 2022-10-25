@@ -1285,7 +1285,7 @@ html {
 
         &:hover {
             .news-text::after {
-                right: -7rem;
+                right: -5.5rem;
             }
         }
 
@@ -2140,5 +2140,28 @@ footer {
 
     .faq .faq-content .topic .answer {
         padding: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .news_wrap {
+        a {
+            h3 {
+                font-size: 1.4rem;
+                margin-top: 0;
+            }
+
+            .news-text::after {
+                width: 1.2rem;
+                height: 1.7rem;
+                right: -1.8rem;
+            }
+
+            &:hover {
+                .news-text::after {
+                    right: -1.6rem;
+                }
+            }
+        }
     }
 }
