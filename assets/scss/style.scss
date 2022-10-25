@@ -3,6 +3,10 @@
 
 @import 'base/animation';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .default {
     position: relative;
 }
